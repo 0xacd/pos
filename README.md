@@ -51,7 +51,12 @@ First, build the JAR file:
 mvn clean install
 ```
 
-Then run the service with:
+Then, prepare postgreSQL:
+schema: src/main/resources/db/schema/1.0.0.sql
+data: src/main/resources/db/data/1.0.0.sql
+
+
+Next run the service with:
 
 ```bash
 nohup /usr/local/jdk-21/bin/java \
