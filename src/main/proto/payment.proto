@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option java_package = "com.anymind.pos.grpc";
+option java_multiple_files = true;
+
+service PaymentService {
+  rpc MakePayment (PaymentRequest) returns (PaymentResponse);
+  rpc GetSales (SalesRequest) returns (stream HourlySale) {};
+}
+
+message PaymentRequest {
+  string customerId = 1;
+  double price = 2;
+  double priceModifier = 3;
+  string paymentMethod = 4;
+  string datetime = 5;
+  map<string, string> additionalItem = 6;
+}
+
+message PaymentResponse {
+  double finalPrice = 1;
+  double points = 2;
+}
+
+message SalesRequest {
+  string startDateTime = 1;
+  string endDateTime = 2;
+}
+
+message HourlySale {
+  string datetime = 1;
+  double sales = 2;
+  double points = 3;
+}
+
+
+
