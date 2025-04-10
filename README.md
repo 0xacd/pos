@@ -52,7 +52,9 @@ mvn clean install
 ```
 
 Then, prepare postgreSQL:
+
 schema: src/main/resources/db/schema/1.0.0.sql
+
 data: src/main/resources/db/data/1.0.0.sql
 
 
